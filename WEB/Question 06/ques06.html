@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calender Question</title>
+    <style>
+        th {
+            font-weight: bold;
+            background-color: rgb(255, 78, 78);
+            color: white;
+        }
+        
+        table {
+            margin-top: 50px;
+            border-radius: 5px;
+        }
+        
+        table th {
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        
+        table tr td {
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        
+        .year_input,
+        .month_input {
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Calender Display</h1>
+        <p>Get the calender according to the selected year</p>
+
+        <select class="year_input" name="year_input" id="year_input" required oninvalid="this.setCustomValidity('Please select any year !!')" oninput="this.setCustomValidity('')">
+            <option value="" selected disabled>Select Year</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+        </select>
+
+        <select class="month_input" name="month_input" id="month_input" required oninvalid="this.setCustomValidity('Please select any month !!')" oninput="this.setCustomValidity('')">
+            <option value="" selected disabled>Select Month</option>
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+        </select>
+
+        <br><br>
+
+        <input type="submit" id="date_submit" value="Get Calender" onclick="createCalendar(calendar);" />
+    </center>
+
+    <div id="calendar"></div>
+    <script>
+        function createCalendar(elem) {
+            var drop_year = document.getElementById("year_input");
+            var drop_month = document.getElementById("month_input");
+
+            let year = drop_year.options[drop_year.selectedIndex].value;
+            let mon = drop_month.options[drop_month.selectedIndex].value;
+
+            if (year == '' || year == null) {
+                alert("Please select any year !!");
+            } else if (mon == '' || mon == null) {
+                alert("Please select any month !!");
+            } else {
+                let d = new Date(year, mon);
+                let table = '<center><table border="1 " cellspacing="5 "><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr><tr>';
+
+                for (let i = 0; i < getDay(d); i++) {
+                    table += '<td></td>'
+                }
+                while (d.getMonth() == mon) {
+                    table += '<td>' + d.getDate() + '</td>';
+                    if (getDay(d) % 7 == 6) {
+                        table += '</tr><tr>';
+                    }
+
+                    d.setDate(d.getDate() + 1);
+                }
+
+                if (getDay(d) != 0) {
+                    for (let i = getDay(d); i < 7; i++) {
+                        table += '<td></td>';
+                    }
+                }
+                table += '</tr></table></center>';
+                elem.innerHTML = table;
+            }
+        }
+
+        function getDay(date) {
+            let day = date.getDay();
+            if (day == 0) day = 7;
+            return day - 1;
+        }
+    </script>
+
+</body>
+
+</html>

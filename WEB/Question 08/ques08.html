@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Change Background Question</title>
+
+    <script>
+        function change_bg() {
+            var back_bg = document.getElementById("body_tag");
+            var val1 = Math.floor((Math.random() * 255) + 1);
+            var val2 = Math.floor((Math.random() * 255) + 1);
+            var val3 = Math.floor((Math.random() * 255) + 1);
+
+            back_bg.style.backgroundColor = "rgb(" + val1 + "," + val2 + "," + val3 + ")";
+        }
+    </script>
+
+    <style>
+        #change_bg_btn {
+            text-align: center;
+            background-color: #ff5757;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.164);
+            margin-top: 50px;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        #change_bg_btn:hover {
+            cursor: pointer;
+            background-color: #f30000;
+        }
+    </style>
+</head>
+
+<body id="body_tag">
+    <p id="change_bg_btn" onclick="change_bg();">Change the background color</p>
+</body>
+
+</html>

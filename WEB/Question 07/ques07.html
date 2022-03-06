@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function validation(inputText) {
+            if (document.getElementById("t1").value == "")
+                alert("enter your name");
+            else if (document.getElementById("t2").value == "")
+                alert("enter a password");
+            else if (document.getElementById("t2").value != document.getElementById("t3").value)
+                alert(" enter correct password");
+            else if (document.getElementById("t4").value == "")
+                alert("enter your e-mail");
+            else if (document.getElementById("t5").value == "")
+                alert("enter your address");
+            else
+                alert("Form has been submitted");
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <table border="0">
+            <h1>Registeration form</h1>
+            <form name="form">
+                <tr>
+                    <td>username : </td>
+                    <td><input type="text" id="t1"><br><br></td>
+                </tr>
+                <tr>
+                    <td>password : </td>
+                    <td><input type="text" id="t2"><br><br></td>
+                </tr>
+                <tr>
+                    <td>confirm password : &nbsp;</td>
+                    <td><input type="password" id="t3"><br><br></td>
+                </tr>
+                <tr>
+                    <td>email : </td>
+                    <td><input type="text" id="t4"><br><br></td>
+                </tr>
+                <tr>
+                    <td>Address : </td>
+                    <td><textarea rows="4" cols="27" id="t5"></textarea><br><br></td>
+                </tr>
+                <tr align="center">
+                    <td><input type="button" value="Submit" onclick="validation(document.form.t5.value)"></td>
+                    <td><input type="reset" value="Clear All"></td>
+                </tr>
+            </form>
+    </center>
+    </td>
+    </tr>
+    </table>
+</body>
+
+</html>

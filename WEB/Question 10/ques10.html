@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <script>
+        var i = 0;
+
+        function exam() {
+            if (document.f1.n1[0].checked)
+                i = i + 1;
+            if (document.f1.n2[1].checked)
+                i = i + 1;
+            if (document.f1.n3[2].checked)
+                i = i + 1;
+            if (document.f1.n4[1].checked)
+                i = i + 1;
+            if (document.f1.n5[2].checked)
+                i = i + 1;
+            alert("Your score is" + i + "/5");
+        }
+    </script>
+
+    <style>
+        #online_form {
+            margin-top: 30px;
+        }
+        
+        #exam_submit {
+            padding: 5px 10px;
+            background-color: firebrick;
+            color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        form div {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid #000;
+            width: 200px;
+            padding-left: 30px;
+        }
+        
+        form div * {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Sample Maths Exam</h1>
+        <form id="online_form" name="f1">
+
+            <h2>Question 01 : 5 x 4</h2>
+            <div id="ques01">
+                <p><input type="radio" class="numb" name="n1" value="20">20</p>
+                <p><input type="radio" class="numb" name="n1" value="45">45</p>
+                <p><input type="radio" class="numb" name="n1" value="65">65</p>
+            </div>
+
+
+            <h2>Question 02 : 46 / 2</h2>
+            <div id="ques02">
+                <p><input type="radio" class="numb1" name="n2" value="34">34</p>
+                <p><input type="radio" class="numb1" name="n2" value="23">23</p>
+                <p><input type="radio" class="numb1" name="n2" value="24">24</p>
+            </div>
+
+
+            <h2>Question 03 : 12 + 6</h2>
+            <div id="ques03">
+                <p><input type="radio" class="numb2" name="n3" value="28">28</p>
+                <p><input type="radio" class="numb2" name="n3" value="34">34</p>
+                <p><input type="radio" class="numb2" name="n3" value="18">18</p>
+            </div>
+
+            <h2>Question 04 : 45 - 3</h2>
+            <div id="ques04">
+                <p><input type="radio" class="numb3" name="n4" value="10">10</p>
+                <p><input type="radio" class="numb3" name="n4" value="42">42</p>
+                <p><input type="radio" class="numb3" name="n4" value="44">44</p>
+            </div>
+
+            <h2>Question 05 : 13 % 8</h2>
+            <div id="ques05">
+                <p><input type="radio" class="numb4" name="n5" value="4">4</p>
+                <p><input type="radio" class="numb4" name="n5" value="1">1</p>
+                <p><input type="radio" class="numb4" name="n5" value="5">5</p>
+            </div>
+
+            <input id="exam_submit" type="submit" value="SUBMIT" onclick="exam()">
+        </form>
+    </center>
+</body>
+
+</html>

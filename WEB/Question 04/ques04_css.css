@@ -1,0 +1,21 @@
+body {
+    background-color: azure;
+}
+
+#p_tag {
+    text-align: center;
+}
+
+#p_tag a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(0, 132, 255);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#p_tag a :hover {
+    background-color: rgb(0, 41, 175);
+    transition: 0.3s ease-in-out;
+}
